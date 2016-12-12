@@ -1,0 +1,7 @@
+What needs to be done to add a new FileFormat?
+	1: A Java Class needs to be made that implements the fileFormat Interface
+	2: The SaveAs() method in Main Class needs to be changed so the user knows which code needs to be inserted.
+	3: In FileFormatFactory a new case in the switch statement needs to be added where a new FileFormat gets made.
+
+You now have added a new file format.
+    

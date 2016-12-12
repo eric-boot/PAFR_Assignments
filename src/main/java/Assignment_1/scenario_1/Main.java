@@ -6,12 +6,6 @@ import java.util.Scanner;
  * Created by Maarten de Klerk on 30-11-16.
  */
 public class Main {
-    final static String Word97 = "word97";
-    final static String RTF = "RTF";
-    final static String PlainText = "PlainText";
-    final static String HTML = "HTML";
-    final static String Word ="Word";
-
     public static void main(String[] args){
         SaveAs();
         Scanner scanner = new Scanner(System.in);
