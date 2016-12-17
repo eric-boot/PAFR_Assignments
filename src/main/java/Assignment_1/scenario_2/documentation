@@ -1,0 +1,5 @@
+Whats needs to be done to add a new Shape?
+    1: A Java Adapter class needs to be made.
+    2: A Java class needs to be made that uses the Adapter class and implements the Shape Interface.
+
+You now have added a new shape.
