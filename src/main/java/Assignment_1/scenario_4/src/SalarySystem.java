@@ -8,6 +8,7 @@ import static scenario_4.src.KindOfEmployee.*;
 public class SalarySystem {
 
 	private ArrayList empArray = new ArrayList();
+	private SalaryFactory salaryFactory = new SalaryFactory();
 
 	public SalarySystem() {
 		Employee j = new Employee("Jaap", JUNIOR);
@@ -31,13 +32,17 @@ public class SalarySystem {
 		return new Employee("no employee has been found", NULL);
 	}
 
+    public void raiseSalary(Employee e) {
+        salaryFactory.raiseSalary(e);
+    }
+
 	public void printAll() {
 		for (Object e : empArray) {
 			Employee e1 = (Employee)e;
 			System.out.print(e.toString() + "\n");
 		}
 	}
-	
+
 }
 
 

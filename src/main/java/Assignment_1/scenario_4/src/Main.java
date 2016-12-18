@@ -7,18 +7,17 @@ public class Main {
     public static void main(String args[]) {
         // raise salary of all employees
         SalarySystem s = new SalarySystem();
-        SalaryFactory salaryFactory = new SalaryFactory();
 
         s.printAll();
 
         Employee e = s.search("Jaap");
-        salaryFactory.raiseSalary(e);
+        s.raiseSalary(e);
 
         e = s.search("Fred");
-        salaryFactory.raiseSalary(e);
+        s.raiseSalary(e);
 
         e = s.search("Hans");
-        salaryFactory.raiseSalary(e);
+        s.raiseSalary(e);
 
         s.printAll();
     }

@@ -3,3 +3,6 @@ Whats needs to be done to add a new Shape?
     2: A Java class needs to be made that uses the Adapter class and implements the Shape Interface.
 
 You now have added a new shape.
+
+The model Adapter is chosen so it's easily to add a new shape.
+The only thing yo have to do is make an new shape and adapter class.
