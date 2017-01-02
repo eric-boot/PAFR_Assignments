@@ -34,5 +34,6 @@ public class Train {
         wagons.add(wagon);
     }
     public void deleteWagon(WagonType wagon){
+        wagons.remove(wagon);
     }
 }

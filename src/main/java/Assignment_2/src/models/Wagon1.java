@@ -20,6 +20,14 @@ public class Wagon1 implements WagonType {
         this.name = name;
     }
 
+    public int getSeats() {
+        return seats;
+    }
+
+    public void setSeats(int seats) {
+        this.seats = seats;
+    }
+
     @Override
     public boolean equals(Object obj){
         boolean isWagon1 = false;
@@ -30,14 +38,5 @@ public class Wagon1 implements WagonType {
             }
         }
         return isWagon1;
-    }
-
-
-    public int getSeats() {
-        return seats;
-    }
-
-    public void setSeats(int seats) {
-        this.seats = seats;
     }
 }
