@@ -11,9 +11,11 @@ public class MainGUI {
     private Logs logs;
     private Output output;
     private JPanel rootPanel;
+    private JLabel textVisualizationLabel;
+    private JLabel ouputLogsLabel;
 
-    public static void main(String[]args ) {
-        JFrame frame = new JFrame("MainGUI");
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Rich rails");
         frame.setContentPane(new MainGUI().rootPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
@@ -42,28 +44,62 @@ public class MainGUI {
         final Logs nestedForm1 = new Logs();
         GridBagConstraints gbc;
         gbc = new GridBagConstraints();
-        gbc.gridx = 1;
-        gbc.gridy = 0;
-        gbc.gridwidth = 2;
+        gbc.gridx = 2;
+        gbc.gridy = 2;
         gbc.weightx = 1.0;
         gbc.weighty = 1.0;
         gbc.fill = GridBagConstraints.BOTH;
+        gbc.insets = new Insets(0, 0, 0, 10);
         rootPanel.add(nestedForm1.$$$getRootComponent$$$(), gbc);
         final Output nestedForm2 = new Output();
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
-        gbc.gridy = 0;
+        gbc.gridy = 2;
         gbc.weightx = 1.0;
         gbc.weighty = 1.0;
         gbc.fill = GridBagConstraints.BOTH;
+        gbc.insets = new Insets(0, 10, 0, 0);
         rootPanel.add(nestedForm2.$$$getRootComponent$$$(), gbc);
         final CommandInput nestedForm3 = new CommandInput();
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
-        gbc.gridy = 1;
+        gbc.gridy = 3;
         gbc.gridwidth = 3;
         gbc.weightx = 1.0;
         rootPanel.add(nestedForm3.$$$getRootComponent$$$(), gbc);
+        final JPanel spacer1 = new JPanel();
+        gbc = new GridBagConstraints();
+        gbc.gridx = 1;
+        gbc.gridy = 2;
+        gbc.fill = GridBagConstraints.VERTICAL;
+        rootPanel.add(spacer1, gbc);
+        final JPanel spacer2 = new JPanel();
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        rootPanel.add(spacer2, gbc);
+        final JPanel spacer3 = new JPanel();
+        gbc = new GridBagConstraints();
+        gbc.gridx = 2;
+        gbc.gridy = 1;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        rootPanel.add(spacer3, gbc);
+        textVisualizationLabel = new JLabel();
+        textVisualizationLabel.setEnabled(true);
+        textVisualizationLabel.setText("Text visualization");
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.WEST;
+        rootPanel.add(textVisualizationLabel, gbc);
+        ouputLogsLabel = new JLabel();
+        ouputLogsLabel.setText("Ouput Logs");
+        gbc = new GridBagConstraints();
+        gbc.gridx = 2;
+        gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.WEST;
+        rootPanel.add(ouputLogsLabel, gbc);
     }
 
     /**

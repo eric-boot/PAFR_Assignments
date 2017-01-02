@@ -33,7 +33,10 @@ public class Logs {
         rootPanel = new JPanel();
         rootPanel.setLayout(new BorderLayout(0, 0));
         TextPane = new JTextPane();
+        TextPane.setBackground(new Color(-14606047));
         TextPane.setEditable(false);
+        TextPane.setForeground(new Color(-1118482));
+        TextPane.setMargin(new Insets(3, 10, 3, 3));
         TextPane.setText("");
         rootPanel.add(TextPane, BorderLayout.CENTER);
     }

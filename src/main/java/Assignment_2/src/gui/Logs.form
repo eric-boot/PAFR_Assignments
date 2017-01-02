@@ -10,7 +10,10 @@
       <component id="d6b0d" class="javax.swing.JTextPane" binding="TextPane">
         <constraints border-constraint="Center"/>
         <properties>
+          <background color="-14606047"/>
           <editable value="false"/>
+          <foreground color="-1118482"/>
+          <margin top="3" left="10" bottom="3" right="3"/>
           <text value=""/>
         </properties>
       </component>
