@@ -1,4 +1,4 @@
-package Assignment_2.src;
+package Assignment_2;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
