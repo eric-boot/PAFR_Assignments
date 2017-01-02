@@ -20,6 +20,19 @@ public class Wagon1 implements WagonType {
         this.name = name;
     }
 
+    @Override
+    public boolean equals(Object obj){
+        boolean isWagon1 = false;
+        if(obj instanceof Wagon1){
+            Wagon1 wagon1 = (Wagon1) obj;
+            if(wagon1.getName().equals(this.getName()) && wagon1.getSeats() == this.getSeats()) {
+                isWagon1 = true;
+            }
+        }
+        return isWagon1;
+    }
+
+
     public int getSeats() {
         return seats;
     }
