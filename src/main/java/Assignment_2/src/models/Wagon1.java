@@ -3,7 +3,7 @@ package Assignment_2.src.models;
 /**
  * Created by Maarten de Klerk on 2-1-2017.
  */
-public class Wagon1 {
+public class Wagon1 implements WagonType {
     private String name;
     private int seats;
 
