@@ -1,4 +1,4 @@
-package models;
+package Assignment_2.src.models;
 
 /**
  * Created by Maarten de Klerk on 2-1-2017.
