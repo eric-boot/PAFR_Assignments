@@ -61,7 +61,7 @@ public class CommandFactory {
         }
 //        else
 //        {
-//            Log log = Log.getInstance();
+//            Logs log = Logs.getInstance();
 //            log.addLogLine("command not correct");
 //        }
         return false;

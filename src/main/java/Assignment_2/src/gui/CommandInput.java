@@ -1,5 +1,7 @@
 package Assignment_2.src.gui;
 
+import Assignment_2.src.command.CommandFactory;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -17,8 +19,20 @@ public class CommandInput {
         executeButton.addActionListener(e -> {
             //TODO perform action onclick
             if (commandTextField.getText() != null) {
+                CommandFactory commandFactory = new CommandFactory(commandTextField.getText());
+//                commandFactory.checkCommand();
 
-            } else {
+//                TEST: als de log werkt het onderstaande commenten
+                if (commandFactory.checkCommand()){
+                    commandTextField.setText("ging goed");
+
+                } else {
+                    commandTextField.setText("FOUT");
+
+                }
+
+//            Deze wordt (nog) niet gebruikt
+//            } else {
 
             }
         });
