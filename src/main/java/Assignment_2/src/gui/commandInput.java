@@ -6,16 +6,13 @@ import java.awt.*;
 /**
  * Created by Maarten de Klerk on 2-1-2017.
  */
-public class CommandInput extends JFrame {
+public class CommandInput {
     private JPanel rootPanel;
     private JTextField commandTextField;
     private JLabel command;
     private JButton executeButton;
 
-    private void createUIComponents() {
-
-        setContentPane(rootPanel);
-        pack();
+    public CommandInput() {
 
         executeButton.addActionListener(e -> {
             //TODO perform action onclick
@@ -25,8 +22,6 @@ public class CommandInput extends JFrame {
 
             }
         });
-
-        setVisible(true);
 
     }
 

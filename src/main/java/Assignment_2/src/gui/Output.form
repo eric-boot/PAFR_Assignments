@@ -7,10 +7,11 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="87eff" class="javax.swing.JTextArea" binding="textArea1" default-binding="true">
+      <component id="87eff" class="javax.swing.JTextArea" binding="TextArea">
         <constraints border-constraint="Center"/>
         <properties>
           <editable value="false"/>
+          <text value=""/>
         </properties>
       </component>
     </children>

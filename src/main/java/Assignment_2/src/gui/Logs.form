@@ -7,10 +7,11 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="d6b0d" class="javax.swing.JTextPane" binding="textPane1" default-binding="true">
+      <component id="d6b0d" class="javax.swing.JTextPane" binding="TextPane">
         <constraints border-constraint="Center"/>
         <properties>
           <editable value="false"/>
+          <text value=""/>
         </properties>
       </component>
     </children>

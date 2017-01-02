@@ -6,6 +6,6 @@ package Assignment_2.src.gui;
 public class Main {
 
     public static void main(String[] args){
-        MainGUI mygui = new MainGUI();
+        new MainGUI();
     }
 }

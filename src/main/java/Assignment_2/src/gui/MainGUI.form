@@ -2,20 +2,17 @@
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Assignment_2.src.gui.MainGUI">
   <grid id="27dc6" binding="rootPanel" layout-manager="GridBagLayout">
     <constraints>
-      <xy x="20" y="20" width="983" height="786"/>
+      <xy x="20" y="20" width="1600" height="900"/>
     </constraints>
-    <properties/>
+    <properties>
+      <minimumSize width="1600" height="900"/>
+      <preferredSize width="1600" height="900"/>
+    </properties>
     <border type="none"/>
     <children>
-      <nested-form id="8237e" form-file="Assignment_2/src/gui/CommandInput.form">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-          <gridbag weightx="1.0" weighty="0.0"/>
-        </constraints>
-      </nested-form>
       <nested-form id="e3cb8" form-file="Assignment_2/src/gui/Logs.form">
         <constraints>
-          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <gridbag weightx="1.0" weighty="1.0"/>
         </constraints>
       </nested-form>
@@ -23,6 +20,12 @@
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <gridbag weightx="1.0" weighty="1.0"/>
+        </constraints>
+      </nested-form>
+      <nested-form id="8237e" form-file="Assignment_2/src/gui/CommandInput.form">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="1.0" weighty="0.0"/>
         </constraints>
       </nested-form>
     </children>
