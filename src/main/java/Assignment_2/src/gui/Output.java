@@ -11,7 +11,7 @@ import java.util.*;
  * Created by Maarten de Klerk on 2-1-2017.
  */
 public class Output implements Observer {
-    private JPanel rootPanel;
+    public JPanel rootPanel;
     private JTextPane textPane;
     private GUIFacade guiFacade = GUIFacade.getInstance();
 
@@ -68,6 +68,8 @@ public class Output implements Observer {
     private void $$$setupUI$$$() {
         rootPanel = new JPanel();
         rootPanel.setLayout(new BorderLayout(0, 0));
+        rootPanel.setMinimumSize(new Dimension(200, 180));
+        rootPanel.setPreferredSize(new Dimension(500, 400));
         final JScrollPane scrollPane1 = new JScrollPane();
         rootPanel.add(scrollPane1, BorderLayout.CENTER);
         textPane = new JTextPane();

@@ -16,10 +16,14 @@ public class GUIFacade extends Observable{
     private ArrayList<String> logLines;
     private ArrayList<Train> allTrains;
     private ArrayList<WagonType> allWagons;
-    private static GUIFacade GUIFacadeInstance;
+    private static GUIFacade GUIFacadeInstance = null;
     private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
-    private GUIFacade(){logLines = new ArrayList<String>(); GUIFacadeInstance = null;}
+    private GUIFacade(){
+        logLines = new ArrayList<String>();
+        setChanged();
+        notifyObservers();
+    }
 
     public static GUIFacade getInstance(){
         if(GUIFacadeInstance == null){

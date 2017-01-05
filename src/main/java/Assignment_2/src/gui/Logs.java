@@ -15,13 +15,11 @@ public class Logs implements Observer {
     private JPanel rootPanel;
     private JTextPane textPane;
     private GUIFacade guiFacade = GUIFacade.getInstance();
-    private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
     public void update(Observable o, Object arg) {
         ArrayList<String> loglines = guiFacade.getLogLines();
         textPane.setText("");
         for (String l : loglines) {
-            LocalDateTime now = LocalDateTime.now();
             textPane.setText(textPane.getText() + "\n " + l);
         }
     }

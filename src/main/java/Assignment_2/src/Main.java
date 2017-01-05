@@ -1,6 +1,8 @@
 package Assignment_2.src;
 
+import Assignment_2.src.gui.GUIFacade;
 import Assignment_2.src.gui.MainGUI;
+import Assignment_2.src.gui.Output;
 
 import javax.swing.*;
 
@@ -15,5 +17,8 @@ public class Main {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+
+
+        GUIFacade.getInstance().addLogline("Welcome to RichRails!");
     }
 }

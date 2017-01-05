@@ -27,11 +27,9 @@ public class CommandInput {
 
                 //                TEST: als de log werkt het onderstaande commenten
                 if (commandFactory.checkCommand()) {
-                    System.out.println("execute");
                     guiFacade.addLogline("ging goed");
 
                 } else {
-                    System.out.println("FOUT");
                     guiFacade.addLogline("FOUT");
                 }
 
