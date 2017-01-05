@@ -11,9 +11,10 @@ public class Output {
     private JPanel rootPanel;
 
 
-    public Output() {}
+    public Output() {
+    }
 
-    public void insertLine(String line){
+    public void insertLine(String line) {
         TextArea.setText(TextArea.getText() + "\n" + line);
     }
 

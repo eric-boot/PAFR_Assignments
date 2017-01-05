@@ -2,18 +2,29 @@ package Assignment_2.src.gui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * Created by Maarten de Klerk on 2-1-2017.
  */
-public class Logs {
-    private JTextPane TextPane;
+public class Logs implements Observer {
     private JPanel rootPanel;
+    private JTextPane textPane;
+    private GUIFacade guiFacade = GUIFacade.getInstance();
+    private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
-    public Logs() {}
-
-    public void insertLine(String line){
-        TextPane.setText(TextPane.getText() + "\n" + line);
+    public void update(Observable o, Object arg) {
+        System.out.println("insertLine");
+        ArrayList<String> loglines = guiFacade.getLogLines();
+        textPane.setText("");
+        for (String l : loglines) {
+            LocalDateTime now = LocalDateTime.now();
+            textPane.setText(textPane.getText() + "\n " + dtf.format(now) + ">\t" + l);
+        }
     }
 
 
@@ -34,13 +45,10 @@ public class Logs {
     private void $$$setupUI$$$() {
         rootPanel = new JPanel();
         rootPanel.setLayout(new BorderLayout(0, 0));
-        TextPane = new JTextPane();
-        TextPane.setBackground(new Color(-14606047));
-        TextPane.setEditable(false);
-        TextPane.setForeground(new Color(-1118482));
-        TextPane.setMargin(new Insets(3, 10, 3, 3));
-        TextPane.setText("");
-        rootPanel.add(TextPane, BorderLayout.CENTER);
+        final JScrollPane scrollPane1 = new JScrollPane();
+        rootPanel.add(scrollPane1, BorderLayout.CENTER);
+        textPane = new JTextPane();
+        scrollPane1.setViewportView(textPane);
     }
 
     /**

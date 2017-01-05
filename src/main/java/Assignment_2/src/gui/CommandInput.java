@@ -1,5 +1,6 @@
 package Assignment_2.src.gui;
 
+import Assignment_2.src.command.Command;
 import Assignment_2.src.command.CommandFactory;
 
 import javax.swing.*;
@@ -12,22 +13,26 @@ public class CommandInput {
     private JPanel rootPanel;
     private JTextField commandTextField;
     private JButton executeButton;
+    private GUIFacade guiFacade;
 
     public CommandInput() {
 
+        guiFacade = GUIFacade.getInstance();
+
+
         executeButton.addActionListener(e -> {
-            //TODO perform action onclick
             if (commandTextField.getText() != null) {
                 CommandFactory commandFactory = new CommandFactory(commandTextField.getText());
                 //                commandFactory.checkCommand();
 
                 //                TEST: als de log werkt het onderstaande commenten
                 if (commandFactory.checkCommand()) {
-                    commandTextField.setText("ging goed");
+                    System.out.println("execute");
+                    guiFacade.addLogline("ging goed");
 
                 } else {
-                    commandTextField.setText("FOUT");
-
+                    System.out.println("FOUT");
+                    guiFacade.addLogline("FOUT");
                 }
 
                 //            Deze wordt (nog) niet gebruikt
