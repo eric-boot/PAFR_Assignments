@@ -10,6 +10,7 @@ import java.util.Map;
 public class Train {
     private String name;
     private ArrayList<WagonType> wagons;
+    private int allSeats;
 
     public Train(String name) {
         this.name = name;
@@ -38,6 +39,13 @@ public class Train {
 
     public void deleteWagon(WagonType wagon){
         wagons.remove(wagon);
+    }
+
+    public int getAllSeats(){
+        for(WagonType w : wagons){
+             allSeats += w.getSeats();
+        }
+        return allSeats;
     }
 
 }
