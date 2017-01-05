@@ -34,8 +34,8 @@ public class CommandInput {
                     guiFacade.addLogline("FOUT");
                 }
 
-                //            Deze wordt (nog) niet gebruikt
-                //            } else {
+//            Deze wordt (nog) niet gebruikt
+//            } else {
 
             }
             commandTextField.setText("");

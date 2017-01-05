@@ -9,7 +9,6 @@ import java.awt.*;
 public class MainGUI {
     private CommandInput commandInput;
     private Output output;
-    private Output outputNew;
     public JPanel rootPanel;
     private Logs logs1;
     private JButton newWindowButton;
@@ -20,11 +19,9 @@ public class MainGUI {
         GUIFacade guiFacade = GUIFacade.getInstance();
         logs1 = new Logs();
         output = new Output();
-        outputNew = new Output();
 
         guiFacade.addObserver(logs1);
         guiFacade.addObserver(output);
-        guiFacade.addObserver(outputNew);
 
         newWindowButton = new JButton();
 
@@ -33,7 +30,7 @@ public class MainGUI {
 
         newWindowButton.addActionListener(e -> {
             JFrame frame = new JFrame("Rich rails");
-            frame.setContentPane(outputNew.rootPanel);
+            frame.setContentPane(output.rootPanel);
             frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             frame.pack();
             frame.setVisible(true);

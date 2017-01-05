@@ -2,7 +2,6 @@ package Assignment_2.src;
 
 import Assignment_2.src.gui.GUIFacade;
 import Assignment_2.src.gui.MainGUI;
-import Assignment_2.src.gui.Output;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,14 +12,15 @@ import java.awt.*;
 public class Main {
     public static void main(String[] args){
         Image icon = Toolkit.getDefaultToolkit().getImage("Assignment_2/src/images/bullet_train.png");
+
         JFrame frame = new JFrame("Rich rails");
-        frame.setIconImage(icon);
         MainGUI mainGui = new MainGUI();
+
         frame.setContentPane(mainGui.rootPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setIconImage(icon);
         frame.pack();
         frame.setVisible(true);
-
 
         GUIFacade.getInstance().addLogline("Welcome to RichRails!");
     }
