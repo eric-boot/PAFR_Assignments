@@ -1,21 +1,53 @@
 package Assignment_2.src.gui;
 
+import Assignment_2.src.models.Train;
+import Assignment_2.src.models.WagonType;
+
 import javax.swing.*;
 import java.awt.*;
+import java.util.*;
 
 /**
  * Created by Maarten de Klerk on 2-1-2017.
  */
-public class Output {
-    private JTextArea TextArea;
+public class Output implements Observer {
     private JPanel rootPanel;
+    private JTextPane textPane;
+    private GUIFacade guiFacade = GUIFacade.getInstance();
 
+    public void update(Observable o, Object arg) {
+        textPane.setText("");
 
-    public Output() {
-    }
+        ArrayList<Train> allTrains = guiFacade.getAllTrains();
+        ArrayList<WagonType> allWagons = guiFacade.getAllWagons();
 
-    public void insertLine(String line) {
-        TextArea.setText(TextArea.getText() + "\n" + line);
+        textPane.setText(textPane.getText() + "All vehicles: \n\n");
+
+        textPane.setText(textPane.getText() + "WAGONS: \n");
+
+        if (allWagons != null) {
+
+            for (WagonType w : allWagons) {
+                textPane.setText(textPane.getText() + "(" + w.getName() + ":" + w.getSeats() + ") \n");
+            }
+        } else {
+            textPane.setText(textPane.getText() + "There are no Wagons. \n");
+        }
+
+        textPane.setText(textPane.getText() + "\n");
+        textPane.setText(textPane.getText() + "TRAINS: \n");
+        if (allTrains != null) {
+
+            for (Train t : allTrains) {
+                textPane.setText(textPane.getText() + "(" + t.getName() + ")");
+                for (WagonType w : t.getWagons()) {
+                    textPane.setText(textPane.getText() + "(" + w.getName() + ":" + w.getSeats() + ")");
+                }
+                textPane.setText(textPane.getText() + "\n");
+            }
+        } else {
+            textPane.setText(textPane.getText() + "There are no Trains. \n");
+        }
     }
 
 
@@ -36,10 +68,11 @@ public class Output {
     private void $$$setupUI$$$() {
         rootPanel = new JPanel();
         rootPanel.setLayout(new BorderLayout(0, 0));
-        TextArea = new JTextArea();
-        TextArea.setEditable(false);
-        TextArea.setText("");
-        rootPanel.add(TextArea, BorderLayout.CENTER);
+        final JScrollPane scrollPane1 = new JScrollPane();
+        rootPanel.add(scrollPane1, BorderLayout.CENTER);
+        textPane = new JTextPane();
+        textPane.setEditable(false);
+        scrollPane1.setViewportView(textPane);
     }
 
     /**

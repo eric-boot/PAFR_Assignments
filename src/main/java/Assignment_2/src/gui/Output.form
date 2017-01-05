@@ -7,13 +7,19 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="87eff" class="javax.swing.JTextArea" binding="TextArea">
+      <scrollpane id="e49c">
         <constraints border-constraint="Center"/>
-        <properties>
-          <editable value="false"/>
-          <text value=""/>
-        </properties>
-      </component>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="6310d" class="javax.swing.JTextPane" binding="textPane">
+            <constraints/>
+            <properties>
+              <editable value="false"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
     </children>
   </grid>
 </form>

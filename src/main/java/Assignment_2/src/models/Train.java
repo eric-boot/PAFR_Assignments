@@ -1,6 +1,8 @@
 package Assignment_2.src.models;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Maarten de Klerk on 2-1-2017.
@@ -37,4 +39,5 @@ public class Train {
     public void deleteWagon(WagonType wagon){
         wagons.remove(wagon);
     }
+
 }

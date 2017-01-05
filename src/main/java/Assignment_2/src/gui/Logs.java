@@ -18,12 +18,11 @@ public class Logs implements Observer {
     private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
     public void update(Observable o, Object arg) {
-        System.out.println("insertLine");
         ArrayList<String> loglines = guiFacade.getLogLines();
         textPane.setText("");
         for (String l : loglines) {
             LocalDateTime now = LocalDateTime.now();
-            textPane.setText(textPane.getText() + "\n " + dtf.format(now) + ">\t" + l);
+            textPane.setText(textPane.getText() + "\n " + l);
         }
     }
 
@@ -48,6 +47,7 @@ public class Logs implements Observer {
         final JScrollPane scrollPane1 = new JScrollPane();
         rootPanel.add(scrollPane1, BorderLayout.CENTER);
         textPane = new JTextPane();
+        textPane.setEditable(false);
         scrollPane1.setViewportView(textPane);
     }
 

@@ -260,7 +260,7 @@ public class PoorRail extends javax.swing.JFrame implements ActionListener
 		else if (event.getSource() == btnAddWagon1)
 		{
 			currentNumberOfWagons++;
-			drawWagon("Wagon1");
+			drawWagon("PassengerWagon");
 		}
 		else if (event.getSource() == btnAddWagon2)
 		{

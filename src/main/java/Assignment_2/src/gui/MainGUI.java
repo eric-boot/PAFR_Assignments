@@ -15,9 +15,10 @@ public class MainGUI {
 
     public MainGUI() {
         logs1 = new Logs();
+        output = new Output();
         GUIFacade.getInstance().addObserver(logs1);
+        GUIFacade.getInstance().addObserver(output);
         $$$setupUI$$$();
-
     }
 
 
@@ -46,20 +47,13 @@ public class MainGUI {
         gbc.weighty = 1.0;
         gbc.fill = GridBagConstraints.BOTH;
         rootPanel.add(logs1.$$$getRootComponent$$$(), gbc);
-        final Output nestedForm1 = new Output();
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 1;
         gbc.weightx = 1.0;
         gbc.weighty = 1.0;
         gbc.fill = GridBagConstraints.BOTH;
-        rootPanel.add(nestedForm1.$$$getRootComponent$$$(), gbc);
-        final CommandInput nestedForm2 = new CommandInput();
-        gbc = new GridBagConstraints();
-        gbc.gridx = 1;
-        gbc.gridy = 2;
-        gbc.weightx = 1.0;
-        rootPanel.add(nestedForm2.$$$getRootComponent$$$(), gbc);
+        rootPanel.add(output.$$$getRootComponent$$$(), gbc);
         final JLabel label1 = new JLabel();
         label1.setText("Console Log");
         gbc = new GridBagConstraints();
@@ -76,6 +70,14 @@ public class MainGUI {
         gbc.weightx = 1.0;
         gbc.anchor = GridBagConstraints.WEST;
         rootPanel.add(label2, gbc);
+        final CommandInput nestedForm1 = new CommandInput();
+        gbc = new GridBagConstraints();
+        gbc.gridx = 1;
+        gbc.gridy = 2;
+        gbc.weightx = 1.0;
+        gbc.anchor = GridBagConstraints.SOUTH;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        rootPanel.add(nestedForm1.$$$getRootComponent$$$(), gbc);
     }
 
     /**
