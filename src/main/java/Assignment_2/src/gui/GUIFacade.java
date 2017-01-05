@@ -33,7 +33,7 @@ public class GUIFacade extends Observable{
     }
     public void addLogline(String line){
         LocalDateTime now = LocalDateTime.now();
-        logLines.add(dtf.format(now) + ">\t" + line);
+        logLines.add(dtf.format(now) + " >\t" + line);
         setChanged();
         notifyObservers();
 

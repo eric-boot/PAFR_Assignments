@@ -21,6 +21,7 @@ public class CommandInput {
 
 
         executeButton.addActionListener(e -> {
+
             if (commandTextField.getText() != null) {
                 CommandFactory commandFactory = new CommandFactory(commandTextField.getText());
                 //                commandFactory.checkCommand();
@@ -37,6 +38,7 @@ public class CommandInput {
                 //            } else {
 
             }
+            commandTextField.setText("");
         });
     }
 

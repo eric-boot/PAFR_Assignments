@@ -20,7 +20,7 @@ public class Logs implements Observer {
         ArrayList<String> loglines = guiFacade.getLogLines();
         textPane.setText("");
         for (String l : loglines) {
-            textPane.setText(textPane.getText() + "\n " + l);
+            textPane.setText(textPane.getText() + l + "\n");
         }
     }
 
