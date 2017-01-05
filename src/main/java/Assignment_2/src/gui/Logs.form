@@ -15,7 +15,9 @@
           <component id="1455f" class="javax.swing.JTextPane" binding="textPane">
             <constraints/>
             <properties>
+              <background color="-14606047"/>
               <editable value="false"/>
+              <foreground color="-657931"/>
             </properties>
           </component>
         </children>

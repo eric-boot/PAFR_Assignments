@@ -45,7 +45,9 @@ public class Logs implements Observer {
         final JScrollPane scrollPane1 = new JScrollPane();
         rootPanel.add(scrollPane1, BorderLayout.CENTER);
         textPane = new JTextPane();
+        textPane.setBackground(new Color(-14606047));
         textPane.setEditable(false);
+        textPane.setForeground(new Color(-657931));
         scrollPane1.setViewportView(textPane);
     }
 
