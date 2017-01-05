@@ -11,7 +11,6 @@ import java.awt.*;
 public class CommandInput {
     private JPanel rootPanel;
     private JTextField commandTextField;
-    private JLabel command;
     private JButton executeButton;
 
     public CommandInput() {
@@ -20,10 +19,10 @@ public class CommandInput {
             //TODO perform action onclick
             if (commandTextField.getText() != null) {
                 CommandFactory commandFactory = new CommandFactory(commandTextField.getText());
-//                commandFactory.checkCommand();
+                //                commandFactory.checkCommand();
 
-//                TEST: als de log werkt het onderstaande commenten
-                if (commandFactory.checkCommand()){
+                //                TEST: als de log werkt het onderstaande commenten
+                if (commandFactory.checkCommand()) {
                     commandTextField.setText("ging goed");
 
                 } else {
@@ -31,12 +30,11 @@ public class CommandInput {
 
                 }
 
-//            Deze wordt (nog) niet gebruikt
-//            } else {
+                //            Deze wordt (nog) niet gebruikt
+                //            } else {
 
             }
         });
-
     }
 
     {
@@ -55,22 +53,20 @@ public class CommandInput {
      */
     private void $$$setupUI$$$() {
         rootPanel = new JPanel();
-        rootPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-        command = new JLabel();
-        command.setEnabled(false);
-        command.setText("Command");
-        command.setToolTipText("Type a command to be executed");
-        rootPanel.add(command);
+        rootPanel.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(1, 3, new Insets(0, 0, 0, 0), -1, -1));
+        final JLabel label1 = new JLabel();
+        label1.setText("Command");
+        label1.setDisplayedMnemonic('C');
+        label1.setDisplayedMnemonicIndex(0);
+        rootPanel.add(label1, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         commandTextField = new JTextField();
-        commandTextField.setColumns(20);
-        commandTextField.setText("");
-        rootPanel.add(commandTextField);
+        rootPanel.add(commandTextField, new com.intellij.uiDesigner.core.GridConstraints(0, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         executeButton = new JButton();
-        executeButton.setHideActionText(false);
         executeButton.setText("Execute");
-        executeButton.setToolTipText("Execute the command");
-        rootPanel.add(executeButton);
-        command.setLabelFor(commandTextField);
+        executeButton.setMnemonic('E');
+        executeButton.setDisplayedMnemonicIndex(0);
+        rootPanel.add(executeButton, new com.intellij.uiDesigner.core.GridConstraints(0, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        label1.setLabelFor(commandTextField);
     }
 
     /**

@@ -47,7 +47,7 @@ public class PoorRail extends javax.swing.JFrame implements ActionListener
 	private int TRAINLENGTH = 100;
 
 	/**
-	* Auto-generated main method to display this JFrame
+	* Auto-generated CommandInput method to display this JFrame
 	*/
 	public static void main(String[] args) 
 	{

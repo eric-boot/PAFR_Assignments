@@ -11,8 +11,6 @@ public class MainGUI {
     private Logs logs;
     private Output output;
     private JPanel rootPanel;
-    private JLabel textVisualizationLabel;
-    private JLabel ouputLogsLabel;
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Rich rails");
@@ -39,7 +37,7 @@ public class MainGUI {
     private void $$$setupUI$$$() {
         rootPanel = new JPanel();
         rootPanel.setLayout(new GridBagLayout());
-        rootPanel.setMinimumSize(new Dimension(1600, 900));
+        rootPanel.setMinimumSize(new Dimension(500, 400));
         rootPanel.setPreferredSize(new Dimension(1600, 900));
         final Logs nestedForm1 = new Logs();
         GridBagConstraints gbc;
@@ -60,13 +58,6 @@ public class MainGUI {
         gbc.fill = GridBagConstraints.BOTH;
         gbc.insets = new Insets(0, 10, 0, 0);
         rootPanel.add(nestedForm2.$$$getRootComponent$$$(), gbc);
-        final CommandInput nestedForm3 = new CommandInput();
-        gbc = new GridBagConstraints();
-        gbc.gridx = 0;
-        gbc.gridy = 3;
-        gbc.gridwidth = 3;
-        gbc.weightx = 1.0;
-        rootPanel.add(nestedForm3.$$$getRootComponent$$$(), gbc);
         final JPanel spacer1 = new JPanel();
         gbc = new GridBagConstraints();
         gbc.gridx = 1;
@@ -100,6 +91,19 @@ public class MainGUI {
         gbc.gridy = 0;
         gbc.anchor = GridBagConstraints.WEST;
         rootPanel.add(ouputLogsLabel, gbc);
+        final CommandInput nestedForm3 = new CommandInput();
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 4;
+        gbc.gridwidth = 3;
+        rootPanel.add(nestedForm3.$$$getRootComponent$$$(), gbc);
+        final JPanel spacer4 = new JPanel();
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        gbc.gridwidth = 3;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        rootPanel.add(spacer4, gbc);
     }
 
     /**

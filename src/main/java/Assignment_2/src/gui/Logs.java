@@ -10,8 +10,10 @@ public class Logs {
     private JTextPane TextPane;
     private JPanel rootPanel;
 
-    public Logs() {
+    public Logs() {}
 
+    public void insertLine(String line){
+        TextPane.setText(TextPane.getText() + "\n" + line);
     }
 
 
