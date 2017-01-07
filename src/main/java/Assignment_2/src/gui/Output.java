@@ -10,12 +10,12 @@ import java.util.*;
 /**
  * Created by Maarten de Klerk on 2-1-2017.
  */
-public class Output implements Observer {
+public class Output implements View {
     public JPanel rootPanel;
     private JTextPane textPane;
     private GUIFacade guiFacade = GUIFacade.getInstance();
 
-    public void update(Observable o, Object arg) {
+    public void update() {
         textPane.setText("");
 
         ArrayList<Train> allTrains = guiFacade.getAllTrains();

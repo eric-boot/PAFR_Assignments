@@ -19,12 +19,10 @@ public class MainGUI {
         GUIFacade guiFacade = GUIFacade.getInstance();
         logs1 = new Logs();
         output = new Output();
-
-        guiFacade.addObserver(logs1);
-        guiFacade.addObserver(output);
+        guiFacade.registerObserver(logs1);
+        guiFacade.registerObserver(output);
 
         newWindowButton = new JButton();
-
         $$$setupUI$$$();
 
 

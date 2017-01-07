@@ -2,21 +2,18 @@ package Assignment_2.src.gui;
 
 import javax.swing.*;
 import java.awt.*;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Observable;
-import java.util.Observer;
 
 /**
  * Created by Maarten de Klerk on 2-1-2017.
  */
-public class Logs implements Observer {
+public class Logs implements View {
+
     private JPanel rootPanel;
     private JTextPane textPane;
     private GUIFacade guiFacade = GUIFacade.getInstance();
 
-    public void update(Observable o, Object arg) {
+    public void update() {
         ArrayList<String> loglines = guiFacade.getLogLines();
         textPane.setText("");
         for (String l : loglines) {

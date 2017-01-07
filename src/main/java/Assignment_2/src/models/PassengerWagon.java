@@ -7,6 +7,11 @@ public class PassengerWagon implements WagonType {
     private String name;
     private int seats;
 
+    public PassengerWagon(String name) {
+        this.name = name;
+        this.seats = 20;
+    }
+
     public PassengerWagon(String name, int seats) {
         this.name = name;
         this.seats = seats;

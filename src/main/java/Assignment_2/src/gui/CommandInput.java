@@ -1,6 +1,5 @@
 package Assignment_2.src.gui;
 
-import Assignment_2.src.command.Command;
 import Assignment_2.src.command.CommandFactory;
 
 import javax.swing.*;
@@ -24,19 +23,7 @@ public class CommandInput {
 
             if (commandTextField.getText() != null) {
                 CommandFactory commandFactory = new CommandFactory(commandTextField.getText());
-                //                commandFactory.checkCommand();
-
-                //                TEST: als de log werkt het onderstaande commenten
-                if (commandFactory.checkCommand()) {
-                    guiFacade.addLogline("ging goed");
-
-                } else {
-                    guiFacade.addLogline("FOUT");
-                }
-
-//            Deze wordt (nog) niet gebruikt
-//            } else {
-
+                commandFactory.checkCommand();
             }
             commandTextField.setText("");
         });

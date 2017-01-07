@@ -1,5 +1,7 @@
 package Assignment_2.src.command;
 
+import Assignment_2.src.gui.GUIFacade;
+
 import java.util.regex.Pattern;
 
 /**
@@ -10,12 +12,11 @@ public class CommandFactory {
 
     private final String ID = "([a-z])([a-z|0-9])*";
     private final String TYPE = "(train|wagon)";
-    private final String WAGONTYPE = "(wagon|passenger)";
     private final String NUMSEATS = "(\\snumseats\\s(([1-9])([0-9]){0,3}))?";
 
     // New commands
     private final String NEWTRAIN_COMMAND = "^(new\\strain\\s" + ID + ")$";
-    private final String NEWWAGON_COMMAND = "^(new\\s" + WAGONTYPE + "\\s" + ID + NUMSEATS + ")$";
+    private final String NEWWAGON_COMMAND = "^(new\\swagon\\s" + ID + NUMSEATS + ")$";
     private final String NEW_COMMAND = "(" + NEWTRAIN_COMMAND + "|" + NEWWAGON_COMMAND + ")";
 
     // Add, Get, Del and Rem Command
@@ -54,16 +55,17 @@ public class CommandFactory {
                 handleCommand();
                 return true;
             }
+
             catch (NullPointerException npe)
             {
                 System.err.println(npe.getMessage());
             }
         }
-//        else
-//        {
-//            Logs log = Logs.getInstance();
-//            log.addLogLine("command not correct");
-//        }
+        else
+        {
+            GUIFacade log = GUIFacade.getInstance();
+            log.addLogline("command not correct, type 'help' for more info");
+        }
         return false;
     }
 
@@ -95,12 +97,11 @@ public class CommandFactory {
         {
             command = new RemCommand();
         }
-//        else if (isCommand(HELP_COMMAND))
-//        {
-//            command = new HelpCommand();
-//        }
+        else if (isCommand(HELP_COMMAND))
+        {
+            command = new HelpCommand();
+        }
 
         command.execute(inputCommand);
     }
 }
-
