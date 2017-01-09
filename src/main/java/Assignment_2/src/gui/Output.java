@@ -10,12 +10,12 @@ import java.util.*;
 /**
  * Created by Maarten de Klerk on 2-1-2017.
  */
-public class Output implements View {
+public class Output implements Observer {
     public JPanel rootPanel;
     private JTextPane textPane;
     private GUIFacade guiFacade = GUIFacade.getInstance();
 
-    public void update() {
+    public void update(Observable o, Object arg) {
         textPane.setText("");
 
         ArrayList<Train> allTrains = guiFacade.getAllTrains();
@@ -25,8 +25,7 @@ public class Output implements View {
 
         textPane.setText(textPane.getText() + "WAGONS: \n");
 
-        if (allWagons != null) {
-
+        if (allWagons != null || !allWagons.isEmpty()) {
             for (WagonType w : allWagons) {
                 textPane.setText(textPane.getText() + "(" + w.getName() + ":" + w.getSeats() + ") \n");
             }
@@ -36,7 +35,7 @@ public class Output implements View {
 
         textPane.setText(textPane.getText() + "\n");
         textPane.setText(textPane.getText() + "TRAINS: \n");
-        if (allTrains != null) {
+        if (allTrains != null || !allTrains.isEmpty()) {
 
             for (Train t : allTrains) {
                 textPane.setText(textPane.getText() + "(" + t.getName() + ")");

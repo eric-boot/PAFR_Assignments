@@ -7,11 +7,12 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Observable;
 
 /**
  * Created by Maarten de Klerk on 5-1-2017.
  */
-public class GUIFacade extends Subscriber {
+public class GUIFacade extends Observable {
 
     private ArrayList<String> logLines;
     private ArrayList<Train> allTrains;
@@ -66,6 +67,7 @@ public class GUIFacade extends Subscriber {
     public void addLogline(String line){
         LocalDateTime now = LocalDateTime.now();
         logLines.add(dtf.format(now) + " >\t" + line);
+        setChanged();
         notifyObservers();
     }
 
@@ -77,6 +79,7 @@ public class GUIFacade extends Subscriber {
             addLogline("train " + train.getName() + " does already exist");
         }
 
+        setChanged();
         notifyObservers();
     }
 
@@ -88,29 +91,13 @@ public class GUIFacade extends Subscriber {
             addLogline("wagon " + wagon.getName() + " does already exist");
         }
 
+        setChanged();
         notifyObservers();
     }
 
     public void addWagonToTrain(WagonType wagon, Train toTrain){
 
-        //check if the wagon exists
-        if(getWagon(wagon) != null){
-            WagonType wagonToAdd = getWagon(wagon);
 
-            //check if the train exists
-            if(getTrain(toTrain) != null){
-                Train t = getTrain(toTrain);
-                t.addWagon(wagonToAdd);
-                addLogline("wagon " + wagonToAdd.getName() + " added to train " + t.getName());
-            } else {
-                addLogline("train " + toTrain.getName() + " does not exist");
-            }
-
-        } else {
-            addLogline("wagon " + wagon.getName() + " does not exist");
-        }
-
-        notifyObservers();
     }
 
     public void getNumseatsTrain(Train train){
@@ -119,6 +106,7 @@ public class GUIFacade extends Subscriber {
         } else {
             addLogline("train " + train.getName() + " does not exist");
         }
+        setChanged();
         notifyObservers();
     }
 
@@ -128,6 +116,7 @@ public class GUIFacade extends Subscriber {
         } else {
             addLogline("wagon " + wagon.getName() + " does not exist");
         }
+        setChanged();
         notifyObservers();
     }
 
@@ -167,6 +156,7 @@ public class GUIFacade extends Subscriber {
         } else {
             addLogline("wagon " + wagon.getName() + " does not exist");
         }
+        setChanged();
         notifyObservers();
     }
 
@@ -182,6 +172,7 @@ public class GUIFacade extends Subscriber {
 
         }
 
+        setChanged();
         notifyObservers();
     }
 
@@ -209,6 +200,7 @@ public class GUIFacade extends Subscriber {
             addLogline("wagon " + wagon.getName() + " does not exist");
         }
 
+        setChanged();
         notifyObservers();
     }
 

@@ -19,14 +19,16 @@ public class MainGUI {
         GUIFacade guiFacade = GUIFacade.getInstance();
         logs1 = new Logs();
         output = new Output();
-        guiFacade.registerObserver(logs1);
-        guiFacade.registerObserver(output);
+        guiFacade.addObserver(logs1);
+        guiFacade.addObserver(output);
+
 
         newWindowButton = new JButton();
         $$$setupUI$$$();
 
-
         newWindowButton.addActionListener(e -> {
+            Output output = new Output();
+            guiFacade.addObserver(output);
             JFrame frame = new JFrame("Rich rails");
             frame.setContentPane(output.rootPanel);
             frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

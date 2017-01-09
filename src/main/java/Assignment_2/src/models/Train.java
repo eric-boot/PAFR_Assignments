@@ -19,25 +19,14 @@ public class Train{
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public ArrayList<WagonType> getWagons() {
         return wagons;
-    }
-
-    public void setWagons(ArrayList<WagonType> wagons) {
-        this.wagons = wagons;
     }
 
     public void addWagon(WagonType wagon){
         wagons.add(wagon);
     }
 
-    public void deleteWagon(WagonType wagon){
-        wagons.remove(wagon);
-    }
 
     public int getAllSeats(){
         for(WagonType w : wagons){
